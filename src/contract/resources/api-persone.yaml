@@ -1,0 +1,379 @@
+openapi: 3.0.1
+info:
+  title: API persone
+  version: 0.0.1
+paths:
+  /persone/{id}:
+    get:
+      tags:
+        - person-controller
+      summary: Ottenere una persona esistente
+      description: Ottenere una persona esistente, dato un id
+      operationId: getPersonById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PersonDTO'
+    put:
+      tags:
+        - person-controller
+      summary: Aggiornare una persona esistente
+      description: Aggiornare una persona esistente, dato un id
+      operationId: replacePerson
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonDTO'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PersonDTO'
+
+    delete:
+      tags:
+        - person-controller
+      summary: Cancellare una persona esistente
+      description: Cancellare una persona esistente, dato un id
+      operationId: deletePerson
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: OK
+  /persone:
+    post:
+      tags:
+        - person-controller
+      summary: Aggiungere una nuova persona
+      description: Aggiungere una nuova persona
+      operationId: newPerson
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonDTO'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PersonDTO'
+    get:
+      tags:
+        - person-controller
+      summary: Ottenere una pagina ordinata per un campo
+      description: Ottenere una pagina di persone, dato numero e dimensione, ordinata per un campo, ascending oppure descending, filtrata per caratteri iniziali
+      operationId: getPageWithSortingAndFiltering
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 3
+        - name: field
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: ascending
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: true
+        - name: iniziale
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagePerson'
+
+  /persone/{personId}/hobbies:
+    get:
+      tags:
+        - person-controller
+      summary: Ottenere gli hobby di una persona
+      description: Ottenere gli hobby di una persona dato l'id
+      operationId: getHobbiesByPersonId
+      parameters:
+        - name: personId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HobbyDTO'
+  /persone/{personId}/libri:
+    get:
+      tags:
+        - person-controller
+      summary: Ottenere i libri di una persona
+      description: Ottenere i libri di una persona dato l'id
+      operationId: getBooksByPersonId
+      parameters:
+        - name: personId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BookDTO'
+  /persone/corsi/{courseid}:
+    get:
+      tags:
+        - person-controller
+      summary: Ottenere le persone che seguono un corso
+      description: Ottenere le persone che seguono un corso dato l'id del corso
+      operationId: getPersonsByCourseId
+      parameters:
+        - name: courseid
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PersonDTO'
+  /corsi/{personid}:
+    get:
+      tags:
+        - person-controller
+      summary: Ottenere i corsi che una persona segue
+      description: Ottenere la lista di corsi della persona con un dato id
+      operationId: getCoursesByPersonId
+      parameters:
+        - name: personid
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CourseDTO'
+  /corsi:
+    get:
+      tags:
+        - person-controller
+      summary: Ottenere i corsi che una persona segue
+      description: Ottenere la lista di corsi della persona con nome e cognome (se due, i corsi che fanno entrambi)
+      operationId: getCoursesByPersonNomeAndCognomeInCommon
+      parameters:
+        - name: nome
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: cognome
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: nome2
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: cognome2
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CourseDTO'
+components:
+  schemas:
+    PersonDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        cognome:
+          type: string
+        eta:
+          type: integer
+          format: int32
+        libri:
+          type: array
+          items:
+            $ref: '#/components/schemas/BookDTO'
+        corsi:
+          type: array
+          items:
+            $ref: '#/components/schemas/CourseDTO'
+    Pageable:
+      type: object
+      properties:
+        offset:
+          type: integer
+          format: int64
+        pageNumber:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        paged:
+          type: boolean
+        sort:
+          $ref: '#/components/schemas/Sort'
+        unpaged:
+          type: boolean
+      title: Pageable
+
+    PagePerson:
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/PersonDTO'
+        empty:
+          type: boolean
+        first:
+          type: boolean
+        last:
+          type: boolean
+        number:
+          type: integer
+          format: int32
+        numberOfElements:
+          type: integer
+          format: int32
+        pageable:
+          $ref: '#/components/schemas/Pageable'
+        size:
+          type: integer
+          format: int32
+        sort:
+          $ref: '#/components/schemas/Sort'
+        totalElements:
+          type: integer
+          format: int64
+        totalPages:
+          type: integer
+          format: int32
+      title: Page<Person>
+    Sort:
+      type: object
+      properties:
+        empty:
+          type: boolean
+        sorted:
+          type: boolean
+        unsorted:
+          type: boolean
+      title: Sort
+    HobbyDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        personid:
+          type: integer
+          format: int64
+        nomehobby:
+          type: string
+    BookDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        titololibro:
+          type: string
+        personid:
+          type: integer
+          format: int64
+    CourseDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nomecorso:
+          type: string

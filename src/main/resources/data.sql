@@ -1,0 +1,32 @@
+INSERT INTO persone (id, nome, cognome, eta) VALUES (1, 'Andrea', 'R', 25);
+INSERT INTO persone (id, nome, cognome, eta) VALUES (2, 'Luca', 'L', 30);
+INSERT INTO persone (id, nome, cognome, eta) VALUES (3, 'Valerio', 'D', 26);
+INSERT INTO persone (id, nome, cognome, eta) VALUES (4, 'Marco', 'A', 34);
+INSERT INTO persone (id, nome, cognome, eta) VALUES (5, 'Giovanni', 'B', 18);
+INSERT INTO persone (id, nome, cognome, eta) VALUES (6, 'Sara', 'C', 40);
+INSERT INTO persone (id, nome, cognome, eta) VALUES (7, 'Laura', 'E', 33);
+INSERT INTO persone (id, nome, cognome, eta) VALUES (8, 'Ilaria', 'F', 11);
+INSERT INTO persone (id, nome, cognome, eta) VALUES (9, 'Giulio', 'G', 50);
+INSERT INTO persone (id, nome, cognome, eta) VALUES (10, 'Alessio', 'Z', 15);
+INSERT INTO persone (id, nome, cognome, eta) VALUES (11, 'Antonio', 'H', 60);
+INSERT INTO persone (id, nome, cognome, eta) VALUES (12, 'Alessandro', 'P', 60);
+
+INSERT INTO corsi (id, nomecorso) VALUES (1, 'Programmazione');
+INSERT INTO corsi (id, nomecorso) VALUES (2, 'Reti');
+INSERT INTO corsi (id, nomecorso) VALUES (3, 'Basi di dati');
+INSERT INTO corsi (id, nomecorso) VALUES (4, 'Ingegneria del software');
+INSERT INTO corsi (id, nomecorso) VALUES (5, 'Matematica');
+INSERT INTO corsi (id, nomecorso) VALUES (6, 'Inglese');
+INSERT INTO corsi (id, nomecorso) VALUES (7, 'Fisica');
+INSERT INTO corsi (id, nomecorso) VALUES (8, 'Sistemi operativi');
+INSERT INTO corsi (id, nomecorso) VALUES (9, 'Algoritmi');
+
+INSERT INTO person_course (personid, courseid) VALUES (1,1);
+INSERT INTO person_course (personid, courseid) VALUES (1,2);
+INSERT INTO person_course (personid, courseid) VALUES (1,3);
+INSERT INTO person_course (personid, courseid) VALUES (1,4);
+INSERT INTO person_course (personid, courseid) VALUES (2,3);
+INSERT INTO person_course (personid, courseid) VALUES (2,4);
+INSERT INTO person_course (personid, courseid) VALUES (2,6);
+INSERT INTO person_course (personid, courseid) VALUES (3,8);
+INSERT INTO person_course (personid, courseid) VALUES (3,9);
