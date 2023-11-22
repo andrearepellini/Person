@@ -151,6 +151,7 @@ public class PersonBusinessImpl implements PersonBusiness {
         List<CourseDTO> List1 = getCoursesByPersonNomeAndCognome(nome, cognome);
         List<CourseDTO> List2 = getCoursesByPersonNomeAndCognome(nome2, cognome2);
         List1.retainAll(List2);
+
         return List1;
     }
 }
