@@ -1,9 +1,0 @@
-src/contract/java/com/example/demo/api/v1/ApiUtil.java
-src/contract/java/com/example/demo/api/v1/PersonControllerApi.java
-src/contract/java/com/example/demo/model/v1/BookDTO.java
-src/contract/java/com/example/demo/model/v1/CourseDTO.java
-src/contract/java/com/example/demo/model/v1/HobbyDTO.java
-src/contract/java/com/example/demo/model/v1/PagePerson.java
-src/contract/java/com/example/demo/model/v1/Pageable.java
-src/contract/java/com/example/demo/model/v1/PersonDTO.java
-src/contract/java/com/example/demo/model/v1/Sort.java
