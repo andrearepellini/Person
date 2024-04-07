@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.person;
 
-import com.example.demo.persistence.entity.HobbyEntity;
+import com.example.person.persistence.entity.HobbyEntity;
 import feign.Param;
 import feign.RequestLine;
 

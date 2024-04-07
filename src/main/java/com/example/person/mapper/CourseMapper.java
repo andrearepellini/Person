@@ -1,8 +1,8 @@
-package com.example.demo.mapper;
+package com.example.person.mapper;
 
-import com.example.demo.model.v1.CourseDTO;
-import com.example.demo.persistence.entity.CourseEntity;
-import com.example.demo.persistence.repository.PersonRepository;
+import com.example.person.model.v1.CourseDTO;
+import com.example.person.persistence.entity.CourseEntity;
+import com.example.person.persistence.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,18 +1,18 @@
-package com.example.demo.business.impl;
+package com.example.person.service.impl;
 
-import com.example.demo.*;
-import com.example.demo.business.PersonBusiness;
-import com.example.demo.mapper.BookMapper;
-import com.example.demo.mapper.CourseMapper;
-import com.example.demo.mapper.HobbyMapper;
-import com.example.demo.mapper.PersonMapper;
-import com.example.demo.model.v1.CourseDTO;
-import com.example.demo.persistence.entity.PersonEntity;
-import com.example.demo.persistence.repository.CourseRepository;
-import com.example.demo.persistence.repository.PersonRepository;
-import com.example.demo.model.v1.BookDTO;
-import com.example.demo.model.v1.HobbyDTO;
-import com.example.demo.model.v1.PersonDTO;
+import com.example.person.*;
+import com.example.person.service.PersonService;
+import com.example.person.mapper.BookMapper;
+import com.example.person.mapper.CourseMapper;
+import com.example.person.mapper.HobbyMapper;
+import com.example.person.mapper.PersonMapper;
+import com.example.person.model.v1.CourseDTO;
+import com.example.person.persistence.entity.PersonEntity;
+import com.example.person.persistence.repository.CourseRepository;
+import com.example.person.persistence.repository.PersonRepository;
+import com.example.person.model.v1.BookDTO;
+import com.example.person.model.v1.HobbyDTO;
+import com.example.person.model.v1.PersonDTO;
 import feign.Feign;
 import feign.gson.GsonDecoder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PersonBusinessImpl implements PersonBusiness {
+public class PersonServiceImpl implements PersonService {
     @Autowired
     private PersonRepository personRepository;
     @Autowired

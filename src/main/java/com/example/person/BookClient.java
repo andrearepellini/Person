@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.person;
 
-import com.example.demo.persistence.entity.BookEntity;
+import com.example.person.persistence.entity.BookEntity;
 import feign.Param;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

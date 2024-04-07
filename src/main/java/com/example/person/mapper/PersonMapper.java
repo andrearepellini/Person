@@ -1,8 +1,7 @@
-package com.example.demo.mapper;
+package com.example.person.mapper;
 
-import com.example.demo.mapper.BookMapper;
-import com.example.demo.model.v1.PersonDTO;
-import com.example.demo.persistence.entity.PersonEntity;
+import com.example.person.model.v1.PersonDTO;
+import com.example.person.persistence.entity.PersonEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

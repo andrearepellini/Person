@@ -1,11 +1,11 @@
-package com.example.demo.controller.impl;
+package com.example.person.controller.impl;
 
-import com.example.demo.api.v1.PersonControllerApi;
-import com.example.demo.business.PersonBusiness;
-import com.example.demo.model.v1.BookDTO;
-import com.example.demo.model.v1.CourseDTO;
-import com.example.demo.model.v1.HobbyDTO;
-import com.example.demo.model.v1.PersonDTO;
+import com.example.person.api.v1.PersonControllerApi;
+import com.example.person.service.PersonService;
+import com.example.person.model.v1.BookDTO;
+import com.example.person.model.v1.CourseDTO;
+import com.example.person.model.v1.HobbyDTO;
+import com.example.person.model.v1.PersonDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -19,7 +19,7 @@ import java.util.Optional;
 @RestController
 public class PersonControllerApiImpl implements PersonControllerApi {
     @Autowired
-    private PersonBusiness personBusiness;
+    private PersonService personBusiness;
 
     @Override
     public Optional<NativeWebRequest> getRequest() {

@@ -1,6 +1,6 @@
-package com.example.demo.persistence.repository;
+package com.example.person.persistence.repository;
 
-import com.example.demo.persistence.entity.PersonEntity;
+import com.example.person.persistence.entity.PersonEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package com.example.demo.persistence.entity;
+package com.example.person.persistence.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

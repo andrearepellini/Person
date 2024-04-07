@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.person;
 
 public class PersonNotFoundException extends RuntimeException {
     public PersonNotFoundException() {

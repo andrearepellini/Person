@@ -1,6 +1,5 @@
-package com.example.demo.persistence.entity;
+package com.example.person.persistence.entity;
 
-import com.example.demo.persistence.entity.PersonEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

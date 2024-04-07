@@ -1,4 +1,4 @@
-package com.example.demo.persistence.entity;
+package com.example.person.persistence.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

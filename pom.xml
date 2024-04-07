@@ -118,11 +118,11 @@
                             <skipOverwrite>false</skipOverwrite>
                             <inputSpec>${project.basedir}/src/contract/resources/api-persone.yaml
                             </inputSpec><!--pathtotheopenapiservicesdefinitionfile-->
-                            <apiPackage>com.example.demo.api.v1
+                            <apiPackage>com.example.person.api.v1
                             </apiPackage><!--packagefortheservicedefinitions-->
-                            <modelPackage>com.example.demo.model.v1
+                            <modelPackage>com.example.person.model.v1
                             </modelPackage><!--packageforthemodelclasses-->
-                            <packageName>com.example.demo</packageName><!--basepackage-->
+                            <packageName>com.example.person</packageName><!--basepackage-->
                             <withXml>false</withXml>
                             <generateApiDocumentation>false</generateApiDocumentation>
                             <generateModelDocumentation>false</generateModelDocumentation>

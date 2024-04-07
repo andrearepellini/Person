@@ -1,7 +1,7 @@
-package com.example.demo.mapper;
+package com.example.person.mapper;
 
-import com.example.demo.model.v1.HobbyDTO;
-import com.example.demo.persistence.entity.HobbyEntity;
+import com.example.person.model.v1.HobbyDTO;
+import com.example.person.persistence.entity.HobbyEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

@@ -1,15 +1,14 @@
-package com.example.demo.business;
+package com.example.person.service;
 
-import com.example.demo.model.v1.BookDTO;
-import com.example.demo.model.v1.CourseDTO;
-import com.example.demo.model.v1.HobbyDTO;
-import com.example.demo.model.v1.PersonDTO;
+import com.example.person.model.v1.BookDTO;
+import com.example.person.model.v1.CourseDTO;
+import com.example.person.model.v1.HobbyDTO;
+import com.example.person.model.v1.PersonDTO;
 import org.springframework.data.domain.Page;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
- public interface PersonBusiness {
+ public interface PersonService {
      List<PersonDTO> getAll();
 
      Page<PersonDTO> getPage(Integer page, Integer size);
