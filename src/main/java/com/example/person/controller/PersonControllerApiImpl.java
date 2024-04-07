@@ -1,4 +1,4 @@
-package com.example.person.controller.impl;
+package com.example.person.controller;
 
 import com.example.person.api.v1.PersonControllerApi;
 import com.example.person.service.PersonService;

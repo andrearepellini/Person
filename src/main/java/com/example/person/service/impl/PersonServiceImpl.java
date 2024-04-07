@@ -1,6 +1,8 @@
 package com.example.person.service.impl;
 
-import com.example.person.*;
+import com.example.person.client.BookClient;
+import com.example.person.client.HobbyClient;
+import com.example.person.error.PersonNotFoundException;
 import com.example.person.service.PersonService;
 import com.example.person.mapper.BookMapper;
 import com.example.person.mapper.CourseMapper;

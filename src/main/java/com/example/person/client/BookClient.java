@@ -1,4 +1,4 @@
-package com.example.person;
+package com.example.person.client;
 
 import com.example.person.persistence.entity.BookEntity;
 import feign.Param;
