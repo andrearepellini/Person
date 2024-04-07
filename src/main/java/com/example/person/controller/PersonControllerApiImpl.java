@@ -19,7 +19,7 @@ import java.util.Optional;
 @RestController
 public class PersonControllerApiImpl implements PersonControllerApi {
     @Autowired
-    private PersonService personBusiness;
+    private PersonService personService;
 
     @Override
     public Optional<NativeWebRequest> getRequest() {
@@ -28,52 +28,52 @@ public class PersonControllerApiImpl implements PersonControllerApi {
 
     @Override
     public ResponseEntity<List<HobbyDTO>> getHobbiesByPersonId(Long personId) {
-        return new ResponseEntity<>(personBusiness.getHobbiesByPersonId(personId), HttpStatus.OK);
+        return new ResponseEntity<>(personService.getHobbiesByPersonId(personId), HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<Page> getPageWithSortingAndFiltering(Integer page, Integer size, String field, Boolean ascending, String iniziale) {
-        return new ResponseEntity<>(personBusiness.getPageWithSortingAndFiltering(page, size, field, ascending, iniziale), HttpStatus.OK);
+        return new ResponseEntity<>(personService.getPageWithSortingAndFiltering(page, size, field, ascending, iniziale), HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<Void> deletePerson(Long id) {
-        personBusiness.deletePerson(id);
+        personService.deletePerson(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<List<BookDTO>> getBooksByPersonId(Long personId) {
-        return new ResponseEntity<>(personBusiness.getBooksByPersonId(personId), HttpStatus.OK);
+        return new ResponseEntity<>(personService.getBooksByPersonId(personId), HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<List<CourseDTO>> getCoursesByPersonId(Long personid) {
-        return new ResponseEntity<>(personBusiness.getCoursesByPersonId(personid), HttpStatus.OK);
+        return new ResponseEntity<>(personService.getCoursesByPersonId(personid), HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<List<CourseDTO>> getCoursesByPersonNomeAndCognomeInCommon(String nome, String cognome, String nome2, String cognome2) {
-        return new ResponseEntity<>(personBusiness.getCoursesByPersonNomeAndCognomeInCommon(nome, cognome, nome2, cognome2), HttpStatus.OK);
+        return new ResponseEntity<>(personService.getCoursesByPersonNomeAndCognomeInCommon(nome, cognome, nome2, cognome2), HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<PersonDTO> getPersonById(Long id) {
-        return new ResponseEntity<>(personBusiness.getPersonById(id), HttpStatus.OK);
+        return new ResponseEntity<>(personService.getPersonById(id), HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<PersonDTO> newPerson(PersonDTO personDTO) {
-        return new ResponseEntity<>(personBusiness.newPerson(personDTO), HttpStatus.OK);
+        return new ResponseEntity<>(personService.newPerson(personDTO), HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<PersonDTO> replacePerson(Long id, PersonDTO personDTO) {
-        return new ResponseEntity<>(personBusiness.replacePerson(id, personDTO), HttpStatus.OK);
+        return new ResponseEntity<>(personService.replacePerson(id, personDTO), HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<List<PersonDTO>> getPersonsByCourseId(Long courseid) {
-        return new ResponseEntity<>(personBusiness.getPersonsByCourseId(courseid), HttpStatus.OK);
+        return new ResponseEntity<>(personService.getPersonsByCourseId(courseid), HttpStatus.OK);
     }
 }
