@@ -5,7 +5,6 @@ import com.example.person.persistence.entity.HobbyEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class HobbyMapper {
@@ -28,12 +27,12 @@ public class HobbyMapper {
     public List<HobbyEntity> mapToEntityList(List<HobbyDTO> dtos) {
         return dtos.stream()
                 .map(this::mapToEntity)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public List<HobbyDTO> mapToDTOList(List<HobbyEntity> entities) {
         return entities.stream()
                 .map(this::mapToDTO)
-                .collect(Collectors.toList());
+                .toList();
     }
 }

@@ -8,7 +8,6 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class PersonMapper {
@@ -39,19 +38,19 @@ public class PersonMapper {
     public List<PersonEntity> mapToEntityList(List<PersonDTO> dtos) {
         return dtos.stream()
                 .map(this::mapToEntity)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public List<PersonDTO> mapToDTOList(List<PersonEntity> entities) {
         return entities.stream()
                 .map(this::mapToDTO)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public Page<PersonDTO> mapToDTOPage(Page<PersonEntity> entityPage) {
         List<PersonDTO> dtoList = entityPage.getContent().stream()
                 .map(this::mapToDTO)
-                .collect(Collectors.toList());
+                .toList();
 
         return new PageImpl<>(dtoList, entityPage.getPageable(), entityPage.getTotalElements());
     }
@@ -59,7 +58,7 @@ public class PersonMapper {
     public Page<PersonEntity> mapToEntityPage(Page<PersonDTO> dtoPage) {
         List<PersonEntity> entityList = dtoPage.getContent().stream()
                 .map(this::mapToEntity)
-                .collect(Collectors.toList());
+                .toList();
 
         return new PageImpl<>(entityList, dtoPage.getPageable(), dtoPage.getTotalElements());
     }

@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class BookMapper {
@@ -32,12 +31,12 @@ public class BookMapper {
     public List<BookEntity> mapToEntityList(List<BookDTO> dtos) {
         return dtos.stream()
                 .map(this::mapToEntity)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public List<BookDTO> mapToDTOList(List<BookEntity> entities) {
         return entities.stream()
                 .map(this::mapToDTO)
-                .collect(Collectors.toList());
+                .toList();
     }
 }
