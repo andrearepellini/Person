@@ -55,11 +55,6 @@
             <scope>test</scope>
         </dependency>
 
-<!--        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-httpclient</artifactId>
-            <version>13.0</version>
-        </dependency>-->
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-gson</artifactId>
@@ -97,7 +92,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin><!--This plugin config automatically configures mavento createa fat jar.-->
+            </plugin><!--This plugin config automatically configures maven to create a fat jar.-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -116,13 +111,10 @@
                             <generatorName>spring</generatorName>
                             <addCompileSourceRoot>false</addCompileSourceRoot>
                             <skipOverwrite>false</skipOverwrite>
-                            <inputSpec>${project.basedir}/src/contract/resources/api-persone.yaml
-                            </inputSpec><!--pathtotheopenapiservicesdefinitionfile-->
-                            <apiPackage>com.example.person.api.v1
-                            </apiPackage><!--packagefortheservicedefinitions-->
-                            <modelPackage>com.example.person.model.v1
-                            </modelPackage><!--packageforthemodelclasses-->
-                            <packageName>com.example.person</packageName><!--basepackage-->
+                            <inputSpec>${project.basedir}/src/contract/resources/api-persone.yaml</inputSpec><!--path to the openapi services definition file-->
+                            <apiPackage>com.example.person.api.v1</apiPackage><!--package for the service definitions-->
+                            <modelPackage>com.example.person.model.v1</modelPackage><!--package for the model classes-->
+                            <packageName>com.example.person</packageName><!--base package-->
                             <withXml>false</withXml>
                             <generateApiDocumentation>false</generateApiDocumentation>
                             <generateModelDocumentation>false</generateModelDocumentation>
